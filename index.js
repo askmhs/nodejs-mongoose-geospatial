@@ -23,6 +23,9 @@ server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
+/**
+ * Calling .env file
+ */
 require('dotenv').config({
     path: './config/.env'
 });
@@ -55,4 +58,8 @@ server.listen(8000, () => {
     console.log('%s listening at %s', server.name, server.url);
 });
 
+/**
+ * Exporting server
+ * @type {*|Server}
+ */
 module.exports = server;

@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+/**
+ * Defining schema
+ */
 const restaurant = new Schema({
     name: {
         type: String,
@@ -25,4 +28,7 @@ const restaurant = new Schema({
     }
 });
 
+/**
+ * Exporting and creating schema
+ */
 export default mongoose.model('Restaurant', restaurant);

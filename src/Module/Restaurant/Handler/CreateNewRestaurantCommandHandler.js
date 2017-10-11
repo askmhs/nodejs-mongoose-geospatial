@@ -4,6 +4,11 @@ import {CreateNewRestaurantCommand} from "../Command/CreateNewRestaurantCommand"
 import {InternalServerErrorException} from "../../../Exception/InternalServerErrorException";
 
 export class CreateNewRestaurantCommandHandler {
+    /**
+     * Execute
+     * @param command
+     * @returns {Promise}
+     */
     execute(command) {
         return new Promise((resolve, reject) => {
             if (command instanceof CreateNewRestaurantCommand) {
@@ -21,6 +26,9 @@ export class CreateNewRestaurantCommandHandler {
         });
     }
 
+    /**
+     * Store data to DB
+     */
     createNewRestaurant() {
         return RestaurantDB.create(this.command.restaurant);
     }

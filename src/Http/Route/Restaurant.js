@@ -26,6 +26,9 @@ module.exports = (server) => {
          */
         const data = new Restaurant(req.body.name, req.body.address, req.body.location);
 
+        /**
+         * Handle the action
+         */
         bus.handle(new CreateNewRestaurantCommand(data)).then((result) => {
             SuccessResponse(res, 'Successfully create new restaurant!', result);
         }).catch((errResult) => {
@@ -45,6 +48,9 @@ module.exports = (server) => {
         /** @namespace req.query.distance */
         const maxDistance = req.query.radius || 3;
 
+        /**
+         * Finding nearest restaurant
+         */
         RestaurantDB.find({
             location: {
                 $near: coords,
