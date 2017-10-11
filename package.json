@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-mongoose-geospital",
+  "version": "1.0.0",
+  "description": "Find nearest place using NodeJs and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node"
+  },
+  "keywords": [
+    "geonear",
+    "nodejs",
+    "distance",
+    "mongoose",
+    "geospital",
+    "es6"
+  ],
+  "author": "Muhammad Harits Syaifulloh",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "director.js": "^1.2.0",
+    "dotenv": "^4.0.0",
+    "mongoose": "^4.12.1",
+    "restify": "^6.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0"
+  }
+}
