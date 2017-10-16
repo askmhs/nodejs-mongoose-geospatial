@@ -1,13 +1,13 @@
-import {CreateNewRestaurantCommand} from "../../Module/Restaurant/Command/CreateNewRestaurantCommand";
-import {CreateNewRestaurantCommandHandler} from "../../Module/Restaurant/Handler/CreateNewRestaurantCommandHandler";
-import {Decorator} from "../../Module/Decorator";
+import {CreateNewRestaurantCommand} from "../../Domain/Module/Restaurant/Command/CreateNewRestaurantCommand";
+import {CreateNewRestaurantCommandHandler} from "../../Domain/Module/Restaurant/Handler/CreateNewRestaurantCommandHandler";
+import {Decorator} from "../../Domain/Module/Decorator";
 import SuccessResponse from "../Response/SuccessResponse";
-import {InvalidException} from "../../Exception/InvalidException";
+import {InvalidException} from "../../Domain/Exception/InvalidException";
 import BadRequestResponse from "../Response/BadRequestResponse";
 import InternalServerErrorResponse from "../Response/InternalServerErrorResponse";
-import RestaurantDB from "../../Module/Restaurant/Projection/RestaurantDB";
+import RestaurantDB from "../../Domain/Module/Restaurant/Projection/RestaurantDB";
 import NotFoundResponse from "../Response/NotFoundResponse";
-import {Restaurant} from "../../Module/Restaurant/Model/Restaurant";
+import {Restaurant} from "../../Domain/Module/Restaurant/Model/Restaurant";
 
 module.exports = (server) => {
     const director = require('director.js');

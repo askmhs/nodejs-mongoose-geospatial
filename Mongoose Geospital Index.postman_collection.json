@@ -1,0 +1,90 @@
+{
+	"id": "1e5064b0-39a9-a266-3dfd-ff0c5ae6e436",
+	"name": "Mongoose Geospital Index",
+	"description": "",
+	"order": [
+		"81333086-8547-a7dd-254d-ca8528b47084",
+		"2ea16d38-e4a1-972d-bea7-19045501901e"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1508150942172,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "2ea16d38-e4a1-972d-bea7-19045501901e",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8000/restaurant/list?longitude=112.632632&latitude=-7.966620&radius=5",
+			"queryParams": [
+				{
+					"key": "longitude",
+					"value": "112.632632",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "latitude",
+					"value": "-7.966620",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "radius",
+					"value": "5",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1e5064b0-39a9-a266-3dfd-ff0c5ae6e436",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get Nearest Restaurant",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1508151202574,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "81333086-8547-a7dd-254d-ca8528b47084",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/restaurant/create",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508151131405,
+			"name": "Create New Restaurant",
+			"description": "",
+			"collectionId": "1e5064b0-39a9-a266-3dfd-ff0c5ae6e436",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Restaurant D\",\n\t\"address\": \"Malang\",\n\t\"location\": [112.832632, -7.866620]\n}"
+		}
+	]
+}
