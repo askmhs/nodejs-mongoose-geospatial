@@ -1,11 +1,9 @@
-const mongoose = require('mongoose');
-
-const Schema = mongoose.Schema;
+import mongoose from "mongoose";
 
 /**
  * Defining schema
  */
-const restaurant = new Schema({
+const restaurant = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -16,15 +14,12 @@ const restaurant = new Schema({
     },
     location: {
         type: [Number],
-        index: '2d'
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now()
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now()
+        index: "2d"
+    }
+}, {
+    timestamps: {
+        createdAt: "created_at",
+        updatedAt: "updated_at"
     }
 });
 
