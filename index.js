@@ -1,65 +1,45 @@
 import restify from 'restify';
-import promise from 'bluebird';
 import mongoose from 'mongoose';
-
-/**
- * Set mongoose promise
- */
-mongoose.Promise = promise;
-mongoose.Promise = global.Promise;
 
 /**
  * Create server
  * @type {*|Server}
  */
 const server = restify.createServer({
-    name: 'nodejs-mongoose-geonear'
+    name: 'nodejs-mongoose-geospatial',
+    ignoreTrailingSlash: true
 });
 
 /**
  * Configure restify plugin
  */
-server.use(restify.plugins.acceptParser(server.acceptable));
-server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.acceptParser(server.acceptable));
 
-/**
- * Calling .env file
- */
 require('dotenv').config({
-    path: './config/.env'
+    path: './.env'
 });
 
-/** @namespace process.env.DB_HOST */
-const MONGO_URI = process.env.DB_HOST;
-
 /**
- * Connect to DB
+ * Attempt to onnect to DB
  * @type {MongooseThenable}
  */
-mongoose.connect(MONGO_URI, {
-    useMongoClient: true
-}).then(() => {
-    console.log('Connected to DB');
+mongoose.connect(process.env.DB_HOST).then(() => {
+    console.log("Database connection established successfully!");
 }, (err) => {
-    console.log(err);
-    throw new Error('An error occurred while connecting to DB!')
+    throw err;
 });
 
 /**
- * Registering route
+ * Register routers
  */
-require('./src/Http/Route/Restaurant')(server);
+const router = require("./app/Http/Routes/index");
+router.applyRoutes(server);
 
 /**
  * Starting server
  */
-server.listen(8000, () => {
+server.listen(3000, () => {
     console.log('%s listening at %s', server.name, server.url);
 });
-
-/**
- * Exporting server
- * @type {*|Server}
- */
-module.exports = server;
