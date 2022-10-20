@@ -18,10 +18,10 @@
   "license": "ISC",
   "dependencies": {
     "director.js": "^1.2.0",
-    "dotenv": "^8.1.0",
-    "mongoose": "^5.6.11",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.6.5",
     "restify": "^8.4.0",
-    "restify-router": "^0.5.1"
+    "restify-router": "^0.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
